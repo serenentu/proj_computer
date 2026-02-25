@@ -939,7 +939,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(420,340)" to="(470,340)"/>
     <wire from="(240,80)" to="(240,90)"/>
     <wire from="(340,340)" to="(390,340)"/>
-    <wire from="(530,1080)" to="(590,1080)"/>
     <wire from="(270,1130)" to="(390,1130)"/>
     <wire from="(420,800)" to="(590,800)"/>
     <wire from="(170,730)" to="(170,1260)"/>
@@ -1563,6 +1562,27 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="size" val="30"/>
       <a name="inputs" val="3"/>
     </comp>
+    <comp lib="1" loc="(470,1300)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="5"/>
+    </comp>
+    <comp lib="1" loc="(555,1080)" name="OR Gate">
+      <a name="size" val="30"/>
+    </comp>
+    <wire from="(250,630)" to="(250,1280)"/>
+    <wire from="(250,1280)" to="(440,1280)"/>
+    <wire from="(190,1260)" to="(190,1290)"/>
+    <wire from="(190,1290)" to="(440,1290)"/>
+    <wire from="(430,1210)" to="(430,1300)"/>
+    <wire from="(430,1300)" to="(440,1300)"/>
+    <wire from="(160,1260)" to="(160,1310)"/>
+    <wire from="(160,1310)" to="(440,1310)"/>
+    <wire from="(180,1260)" to="(180,1320)"/>
+    <wire from="(180,1320)" to="(440,1320)"/>
+    <wire from="(530,1080)" to="(525,1070)"/>
+    <wire from="(470,1300)" to="(525,1300)"/>
+    <wire from="(525,1300)" to="(525,1090)"/>
+    <wire from="(555,1080)" to="(590,1080)"/>
   </circuit>
   <circuit name="ALU (32-bit)">
     <a name="circuit" val="ALU (32-bit)"/>
