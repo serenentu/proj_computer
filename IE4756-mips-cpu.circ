@@ -2272,6 +2272,133 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="size" val="30"/>
       <a name="inputs" val="2"/>
     </comp>
+  
+    <comp lib="0" loc="(180,150)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="value" val="0x1"/>
+    </comp>
+    <comp lib="7" loc="(220,160)" name="eq (4-bit)"/>
+    <comp lib="0" loc="(270,160)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="1" loc="(320,170)" name="AND Gate">
+      <a name="width" val="32"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(180,240)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="value" val="0xd"/>
+    </comp>
+    <comp lib="7" loc="(220,250)" name="eq (4-bit)"/>
+    <comp lib="0" loc="(270,250)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="1" loc="(320,260)" name="AND Gate">
+      <a name="width" val="32"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(180,330)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="value" val="0xc"/>
+    </comp>
+    <comp lib="7" loc="(220,340)" name="eq (4-bit)"/>
+    <comp lib="0" loc="(270,340)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="1" loc="(320,350)" name="AND Gate">
+      <a name="width" val="32"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(180,520)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="value" val="0xa"/>
+    </comp>
+    <comp lib="7" loc="(220,530)" name="eq (4-bit)"/>
+    <comp lib="0" loc="(270,530)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+      <a name="type" val="sign"/>
+    </comp>
+    <comp lib="0" loc="(220,620)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="1" loc="(370,540)" name="AND Gate">
+      <a name="width" val="32"/>
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(180,830)" name="Constant">
+      <a name="facing" val="south"/>
+      <a name="width" val="4"/>
+      <a name="value" val="0x5"/>
+    </comp>
+    <comp lib="7" loc="(220,840)" name="eq (4-bit)"/>
+    <comp lib="1" loc="(270,850)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+    </comp>
+    <comp lib="0" loc="(320,850)" name="Bit Extender">
+      <a name="in_width" val="1"/>
+      <a name="out_width" val="32"/>
+    </comp>
+    <wire from="(230,70)" to="(240,70)"/>
+    <wire from="(230,430)" to="(240,430)"/>
+    <wire from="(230,660)" to="(240,660)"/>
+    <wire from="(280,750)" to="(290,750)"/>
+    <wire from="(320,970)" to="(330,970)"/>
+    <wire from="(410,940)" to="(420,940)"/>
+    <wire from="(160,170)" to="(190,170)"/>
+    <wire from="(180,150)" to="(180,160)"/>
+    <wire from="(180,160)" to="(190,160)"/>
+    <wire from="(220,160)" to="(240,160)"/>
+    <wire from="(270,160)" to="(290,160)"/>
+    <wire from="(220,200)" to="(290,200)"/>
+    <wire from="(290,200)" to="(290,180)"/>
+    <wire from="(160,260)" to="(190,260)"/>
+    <wire from="(180,240)" to="(180,250)"/>
+    <wire from="(180,250)" to="(190,250)"/>
+    <wire from="(220,250)" to="(240,250)"/>
+    <wire from="(270,250)" to="(290,250)"/>
+    <wire from="(230,290)" to="(290,290)"/>
+    <wire from="(290,290)" to="(290,270)"/>
+    <wire from="(160,350)" to="(190,350)"/>
+    <wire from="(180,330)" to="(180,340)"/>
+    <wire from="(180,340)" to="(190,340)"/>
+    <wire from="(220,340)" to="(240,340)"/>
+    <wire from="(270,340)" to="(290,340)"/>
+    <wire from="(230,380)" to="(290,380)"/>
+    <wire from="(290,380)" to="(290,360)"/>
+    <wire from="(160,440)" to="(160,540)"/>
+    <wire from="(160,540)" to="(190,540)"/>
+    <wire from="(180,520)" to="(180,530)"/>
+    <wire from="(180,530)" to="(190,530)"/>
+    <wire from="(220,530)" to="(240,530)"/>
+    <wire from="(270,530)" to="(340,530)"/>
+    <wire from="(220,620)" to="(240,620)"/>
+    <wire from="(270,610)" to="(340,610)"/>
+    <wire from="(340,610)" to="(340,550)"/>
+    <wire from="(160,850)" to="(190,850)"/>
+    <wire from="(180,830)" to="(180,840)"/>
+    <wire from="(180,840)" to="(190,840)"/>
+    <wire from="(220,840)" to="(240,840)"/>
+    <wire from="(220,880)" to="(240,880)"/>
+    <wire from="(240,880)" to="(240,860)"/>
+    <wire from="(270,850)" to="(290,850)"/>
+    <wire from="(320,850)" to="(320,840)"/>
   </circuit>
   <circuit name="MD (32-bit)">
     <a name="circuit" val="MD (32-bit)"/>
