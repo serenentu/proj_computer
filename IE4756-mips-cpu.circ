@@ -2399,6 +2399,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(240,880)" to="(240,860)"/>
     <wire from="(270,850)" to="(290,850)"/>
     <wire from="(320,850)" to="(320,840)"/>
+  
+    <wire from="(190,280)" to="(200,280)"/>
+    <wire from="(190,300)" to="(200,300)"/>
+    <wire from="(190,370)" to="(200,370)"/>
+    <wire from="(190,390)" to="(200,390)"/>
+    <wire from="(380,970)" to="(390,970)"/>
+    <wire from="(380,990)" to="(390,990)"/>
   </circuit>
   <circuit name="MD (32-bit)">
     <a name="circuit" val="MD (32-bit)"/>
