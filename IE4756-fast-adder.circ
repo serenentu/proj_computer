@@ -185,5 +185,26 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="labelloc" val="east"/>
     </comp>
+    <comp lib="3" loc="(200,180)" name="Adder">
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(170,260)" name="Constant">
+      <a name="facing" val="north"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <wire from="(60,100)" to="(60,170)"/>
+    <wire from="(60,170)" to="(160,170)"/>
+    <wire from="(150,100)" to="(170,100)"/>
+    <wire from="(170,100)" to="(170,190)"/>
+    <wire from="(170,190)" to="(160,190)"/>
+    <wire from="(200,180)" to="(260,180)"/>
+    <wire from="(260,180)" to="(260,100)"/>
+    <wire from="(190,270)" to="(190,230)"/>
+    <wire from="(190,230)" to="(210,230)"/>
+    <wire from="(210,140)" to="(210,90)"/>
+    <wire from="(210,90)" to="(50,90)"/>
+    <wire from="(50,90)" to="(50,270)"/>
+    <wire from="(50,270)" to="(150,270)"/>
+    <wire from="(170,260)" to="(170,270)"/>
   </circuit>
 </project>
