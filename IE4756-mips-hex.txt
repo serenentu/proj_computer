@@ -4,19 +4,25 @@ IE4756 MIPS Assembly Hex Encoding
 Each instruction is encoded as 32-bit machine code in hexadecimal.
 "noop" → 00000000
 
-BNE/branch offsets are word-count (instructions) relative to PC+4.
-J/JAL targets are (address >> 2) encoded in 26-bit field.
+Encoding rules:
+- BNE/BEQ branch offsets are WORD-count (instructions) relative to PC+4.
+  Example: "bne $rs, $rt, 20"  → byte offset 20 / 4 = +5 words → 0x0005 in field
+  Example: "bne $rs, $rt, -72" → byte offset -72 / 4 = -18 words → 0xFFEE in field
+- J/JAL: target field = address >> 2 (lower 26 bits)
+
+Section numbers 0–8 are student-specific: pick Section (student_id % 9) + Section ★.
 
 ---
 
-=== Section 0 ===
+=== Preamble (shared program header, NOT a student section) ===
+# Addresses: 0x00400000 – 0x0040001C
 # lui $1, 64
 3C010040
 # ori $31, $1, 12
 343F000C
-# j 0x004000cc
+# j 0x004000cc  → jumps to Section ★ instruction 4 (addi $29, $29, -4)
 08100033
-# j 0x0040000c
+# j 0x0040000c  → loops back to itself (idle)
 08100003
 # noop
 00000000
@@ -27,7 +33,8 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 # noop
 00000000
 
-=== Section 1 ===
+=== Section 0 ===
+# Addresses: 0x00400020 – 0x0040003C
 # noop
 00000000
 # ori $2, $0, 0
@@ -42,10 +49,11 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 00042042
 # and $8, $5, $16
 00B04024
-# bne $8, $0, 20  (offset = +5 words)
+# bne $8, $0, 20  (byte offset 20 → +5 words → target 0x00400054)
 15000005
 
-=== Section 2 ===
+=== Section 1 ===
+# Addresses: 0x00400040 – 0x0040005C
 # sll $2, $2, 1
 00021040
 # srl $8, $3, 31
@@ -54,7 +62,7 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 00481025
 # sll $3, $3, 1
 00031840
-# j 0x00400078
+# j 0x00400078  → target instr 30 (srl $16, $16, 1)
 0810001E
 # sll $2, $2, 1
 00021040
@@ -63,7 +71,8 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 # or $2, $2, $8
 00481025
 
-=== Section 3 ===
+=== Section 2 ===
+# Addresses: 0x00400060 – 0x0040007C
 # addu $3, $3, $4
 00641821
 # srl $9, $3, 31
@@ -78,10 +87,11 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 00711825
 # srl $16, $16, 1
 00108042
-# bne $16, $0, -72  (offset = -18 words)
+# bne $16, $0, -72  (byte offset -72 → -18 words → target 0x00400038)
 1600FFEE
 
-=== Section 4 ===
+=== Section 3 ===
+# Addresses: 0x00400080 – 0x0040009C
 # jr $31
 03E00008
 # ori $17, $0, 1
@@ -92,21 +102,22 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 00108042
 # sltu $8, $16, $5
 0205402B
-# bne $8, $0, 12  (offset = +3 words)
+# bne $8, $0, 12  (byte offset 12 → +3 words → target 0x004000A4)
 15000003
 # sll $5, $5, 1
 00052840
 # sll $17, $17, 1
 00118840
 
-=== Section ★ (Star) ===
-# j 0x00400090
+=== Section 4 ===
+# Addresses: 0x004000A0 – 0x004000BC
+# j 0x00400090  → target instr 36 (sltu $8, $16, $5)
 08100024
 # ori $2, $0, 0
 34020000
 # sltu $8, $4, $5
 0085402B
-# bne $8, $0, 8  (offset = +2 words)
+# bne $8, $0, 8  (byte offset 8 → +2 words → target 0x004000B8)
 15000002
 # subu $4, $4, $5
 00852023
@@ -116,7 +127,10 @@ J/JAL targets are (address >> 2) encoded in 26-bit field.
 00052842
 # srl $17, $17, 1
 00118842
-# bne $17, $0, -28  (offset = -7 words)
+
+=== Section ★ (Star) ===
+# Addresses: 0x004000C0 – 0x004000D4
+# bne $17, $0, -28  (byte offset -28 → -7 words → target 0x004000A8)
 1620FFF9
 # ori $3, $4, 0
 34830000
@@ -130,6 +144,7 @@ AFBF0000
 3C081001
 
 === Section 5 ===
+# Addresses: 0x004000D8 – 0x004000F4
 # lw $4, 0($8)
 8D040000
 # lui $1, 4097
@@ -142,12 +157,13 @@ AFBF0000
 3C010040
 # ori $31, $1, 244
 343F00F4
-# j 0x00400024
+# j 0x00400024  → target instr 9 (ori $2, $0, 0)
 08100009
 # lui $1, 4097
 3C011001
 
 === Section 6 ===
+# Addresses: 0x004000F8 – 0x00400114
 # ori $8, $1, 8
 34280008
 # sw $2, 0($8)
@@ -166,6 +182,7 @@ AD030004
 3C011001
 
 === Section 7 ===
+# Addresses: 0x00400118 – 0x00400134
 # ori $8, $1, 4
 34280004
 # lw $5, 0($8)
@@ -178,12 +195,13 @@ AD030004
 3C010040
 # ori $31, $1, 308
 343F0134
-# j 0x00400084
+# j 0x00400084  → target instr 33 (ori $17, $0, 1)
 08100021
 # lui $1, 4097
 3C011001
 
 === Section 8 ===
+# Addresses: 0x00400138 – 0x00400154
 # ori $8, $1, 16
 34280010
 # sw $2, 0($8)
