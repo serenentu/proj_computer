@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <project source="2.7.1" version="1.0">
 This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 <lib desc="#Wiring" name="0">
@@ -1628,7 +1628,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(180,430)" to="(190,430)" />
     <wire from="(220,70)" to="(230,70)" />
     <wire from="(220,790)" to="(230,790)" />
-    <wire from="(160,750)" to="(160,930)" />
     <wire from="(150,470)" to="(220,470)" />
     <wire from="(530,1100)" to="(540,1100)" />
     <wire from="(560,810)" to="(570,810)" />
@@ -1721,7 +1720,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(160,670)" to="(190,670)" />
     <wire from="(140,1010)" to="(140,1170)" />
     <wire from="(270,70)" to="(290,70)" />
-    <wire from="(160,80)" to="(160,440)" />
     <wire from="(220,740)" to="(240,740)" />
     <wire from="(160,1050)" to="(160,1100)" />
     <wire from="(460,990)" to="(470,990)" />
@@ -2404,6 +2402,12 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(190,390)" to="(200,390)" />
     <wire from="(380,970)" to="(390,970)" />
     <wire from="(380,990)" to="(390,990)" />
+  <wire from="(160,80)" to="(160,170)" />
+    <wire from="(160,170)" to="(160,260)" />
+    <wire from="(160,260)" to="(160,350)" />
+    <wire from="(160,350)" to="(160,440)" />
+    <wire from="(160,750)" to="(160,850)" />
+    <wire from="(160,850)" to="(160,930)" />
   </circuit>
   <circuit name="MD (32-bit)">
     <a name="circuit" val="MD (32-bit)" />
